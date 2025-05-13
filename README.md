@@ -8,10 +8,11 @@ For now there is only one model but in the future the plan is to create a couple
 
 ### Archive
 
-This is the folder containing all the training and test data. It contains raw jpg files showing different skin changes, both malignant and bening
-
+This is the folder containing all the training and test data. It contains raw jpg files showing different skin changes, both malignant and bening. The training data is 2600 pictures and testing data is 660 pictures. 
 
 ### Model 1  
+
+This model contains multiple convolutional and some fully connected layers. It's final accuracy was around 83%. It utilizes Adam optimizer, learning rate schedule and early stopping 
 
 
 
