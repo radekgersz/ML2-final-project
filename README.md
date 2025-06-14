@@ -19,6 +19,38 @@ This model contains multiple convolutional, max pooling and finally fully connec
 
 #### Model architecture
 
+```
+                            #input
+                            tf.keras.Input(shape=(150,150,3)),
+                            #conv block 1
+                            tf.keras.layers.Conv2D(64,(3),padding = 'same',activation = 'relu'),
+                            tf.keras.layers.Conv2D(64,(3),padding = 'same',activation = 'relu'),
+                            tf.keras.layers.Conv2D(64,(3),padding = 'same',activation = 'relu'),
+                            tf.keras.layers.MaxPooling2D(2),
+                            #conv block 2
+                            tf.keras.layers.Conv2D(128,(3),padding = 'same',activation = 'relu'),
+                            tf.keras.layers.Conv2D(128,(3),padding = 'same',activation = 'relu'),
+                            tf.keras.layers.Conv2D(128,(3),padding = 'same',activation = 'relu'),
+                            tf.keras.layers.MaxPooling2D(2),
+                            #conv block 3
+                            tf.keras.layers.Conv2D(256,(3),padding = 'same',activation = 'relu'),
+                            tf.keras.layers.Conv2D(256,(3),padding = 'same',activation = 'relu'),
+                            tf.keras.layers.Conv2D(256,(3),padding = 'same',activation = 'relu'),
+                            tf.keras.layers.MaxPooling2D(2),
+                            tf.keras.layers.Dropout(0.3),
+                            #conv block 4
+                            tf.keras.layers.Conv2D(256,(3),padding = 'same',activation = 'relu'),
+                            tf.keras.layers.MaxPooling2D(2),
+                            tf.keras.layers.Dropout(0.3),
+
+                            #fully connected
+                            tf.keras.layers.Flatten(),
+                            tf.keras.layers.Dense(128,activation = 'relu'),
+                            tf.keras.layers.Dropout(0.3),
+                            tf.keras.layers.Dense(1, activation = 'sigmoid')
+
+```
+
 ### Model 2 - 88% accuracy
 
 The second model with higher accuracy was the result of refining the original model. I introduced data augmentation, by randomly zooming and rotating the pictures in the training dataset. Using this operation, I was able to make the training dataset 3x larger. Thanks to this, the accuracy was raised by about 2-3%. Refining the model architecture and making it a smaller also made a difference and improved final accuracy. 
