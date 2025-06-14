@@ -25,6 +25,31 @@ The second model with higher accuracy was the result of refining the original mo
 
 #### Model architecture 
 
+```
+                      #input
+                      tf.keras.Input(shape=(150,150,3)),
+                      #conv block
+                      tf.keras.layers.Conv2D(16,(4),padding = 'same',activation = 'relu'),
+                      tf.keras.layers.MaxPooling2D(2),
+                      tf.keras.layers.Conv2D(32,(4),padding = 'same',activation = 'relu'),
+                      tf.keras.layers.MaxPooling2D(2),
+                      tf.keras.layers.Conv2D(64,(4),padding = 'same',activation = 'relu'),
+                      tf.keras.layers.MaxPooling2D(2),
+                      tf.keras.layers.Conv2D(128,(4),padding = 'same',activation = 'relu'),
+                      tf.keras.layers.MaxPooling2D(2),
+                      tf.keras.layers.Conv2D(256,(4),padding = 'same',activation = 'relu'),
+                      tf.keras.layers.MaxPooling2D(2),
+                      #fully connected
+                      tf.keras.layers.Flatten(),
+                      tf.keras.layers.Dense(128,activation = 'relu'),
+                      tf.keras.layers.Dropout(0.2),
+                      tf.keras.layers.Dense(256,activation = 'relu'),
+                      tf.keras.layers.Dropout(0.3),
+                      tf.keras.layers.Dense(1, activation = 'sigmoid')
+
+```
+
+                      
 ## Running the model
 
 To run the model all you need is download one of the jupyter notebook files. Data dowloading, model architecture, and other functions important for running the model are inside each of the notebooks. When creating the dataset using a dedicated function you may need to change the directory the data got downloaed to. 
