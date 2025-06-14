@@ -4,6 +4,9 @@
 This is a final project for a Machine Learning 2 course at University of Warsaw. It's main purpose was to create a neural network able to recognize whether a skin change is malignant (cancerous) or benign (non cancerous).
 For now there is only one model but in the future the plan is to create a couple of different ones and test them. I'm also going to try and download a ready model and use it for classification
 
+## Input data
+The input data comes from kaggle dataset https://www.kaggle.com/datasets/fanconic/skin-cancer-malignant-vs-benign. I am not the owner od the dataset and do not claim rights to it. The dataset description is available under the link I provided. I slightly modified the input data to be able to make different splits to test and training dataset to check the model performance on different dataset configurations. 
+
 ## File Description
 
 ### Archive
